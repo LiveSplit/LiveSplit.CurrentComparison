@@ -17,7 +17,7 @@ namespace LiveSplit.UI.Components
 
         public string Description
         {
-            get { return ""; }
+            get { return "Shows which comparison you are currently comparing to."; }
         }
 
         public ComponentCategory Category
