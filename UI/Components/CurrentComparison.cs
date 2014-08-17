@@ -37,7 +37,14 @@ namespace LiveSplit.UI.Components
             {
                 CurrentState = state
             };
-            InternalComponent = new InfoTextComponent("Comparing Against", "");
+            InternalComponent = new InfoTextComponent("Comparing Against", "")
+            {
+                AlternateNameText = new String[]
+                {
+                    "Comparison",
+                    "Comp."
+                }
+            };
         }
 
         private void PrepareDraw(LiveSplitState state, LayoutMode mode)
@@ -145,6 +152,10 @@ namespace LiveSplit.UI.Components
             {
                 invalidator.Invalidate(0, 0, width, height);
             }
+        }
+
+        public void Dispose()
+        {
         }
     }
 }
