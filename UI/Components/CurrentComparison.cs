@@ -18,8 +18,6 @@ namespace LiveSplit.UI.Components
         protected InfoTextComponent InternalComponent { get; set; }
         public CurrentComparisonSettings Settings { get; set; }
 
-        public GraphicsCache Cache { get; set; }
-
         public float PaddingTop { get { return InternalComponent.PaddingTop; } }
         public float PaddingLeft { get { return InternalComponent.PaddingLeft; } }
         public float PaddingBottom { get { return InternalComponent.PaddingBottom; } }
@@ -32,7 +30,6 @@ namespace LiveSplit.UI.Components
 
         public CurrentComparison(LiveSplitState state)
         {
-            Cache = new GraphicsCache();
             Settings = new CurrentComparisonSettings()
             {
                 CurrentState = state
@@ -136,16 +133,10 @@ namespace LiveSplit.UI.Components
 
         public void Update(IInvalidator invalidator, LiveSplitState state, float width, float height, LayoutMode mode)
         {
-            InternalComponent.LongestString = InternalComponent.NameLabel.Text;
-            InternalComponent.ValueLabel.Text = state.CurrentComparison;
+            InternalComponent.LongestString = InternalComponent.InformationName;
+            InternalComponent.InformationValue = state.CurrentComparison;
 
-            Cache.Restart();
-            Cache["Comparison"] = InternalComponent.ValueLabel.Text;
-
-            if (invalidator != null && Cache.HasChanged)
-            {
-                invalidator.Invalidate(0, 0, width, height);
-            }
+            InternalComponent.Update(invalidator, state, width, height, mode);
         }
 
         public void Dispose()
