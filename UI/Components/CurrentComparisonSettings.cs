@@ -78,7 +78,6 @@ namespace LiveSplit.UI.Components
             btnColor2.DataBindings.Add("BackColor", this, "BackgroundColor2", false, DataSourceUpdateMode.OnPropertyChanged);
             chkFont.DataBindings.Add("Checked", this, "OverrideFont1", false, DataSourceUpdateMode.OnPropertyChanged);
             chkFont2.DataBindings.Add("Checked", this, "OverrideFont2", false, DataSourceUpdateMode.OnPropertyChanged);
-            this.Load += TextComponentSettings_Load;
 
             chkOverrideTextColor.CheckedChanged += chkOverrideTextColor_CheckedChanged;
             chkOverrideTimeColor.CheckedChanged += chkOverrideTimeColor_CheckedChanged;
@@ -106,7 +105,7 @@ namespace LiveSplit.UI.Components
             label1.Enabled = btnTextColor.Enabled = chkOverrideTextColor.Checked;
         }
 
-        void TextComponentSettings_Load(object sender, EventArgs e)
+        void CurrentComponentSettings_Load(object sender, EventArgs e)
         {
             chkOverrideTextColor_CheckedChanged(null, null);
             chkOverrideTimeColor_CheckedChanged(null, null);

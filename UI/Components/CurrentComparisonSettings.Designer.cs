@@ -507,6 +507,7 @@
             this.Name = "CurrentComparisonSettings";
             this.Padding = new System.Windows.Forms.Padding(7);
             this.Size = new System.Drawing.Size(476, 456);
+            this.Load += new System.EventHandler(CurrentComponentSettings_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
