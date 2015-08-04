@@ -79,6 +79,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="UI\Components\CurrentComparisonSettings.ja-JP.resx">
+      <DependentUpon>CurrentComparisonSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\CurrentComparisonSettings.resx">
       <DependentUpon>CurrentComparisonSettings.cs</DependentUpon>
     </EmbeddedResource>
