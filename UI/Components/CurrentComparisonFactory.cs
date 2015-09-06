@@ -5,52 +5,20 @@ namespace LiveSplit.UI.Components
 {
     public class CurrentComparisonFactory : IComponentFactory
     {
-        public string ComponentName
-        {
-            get { return "Current Comparison"; }
-        }
+        public string ComponentName => "Current Comparison";
 
-        public string Description
-        {
-            get { return "Shows which comparison you are currently comparing to."; }
-        }
+        public string Description => "Shows which comparison you are currently comparing to.";
 
-        public ComponentCategory Category
-        {
-            get { return ComponentCategory.Information; }
-        }
+        public ComponentCategory Category => ComponentCategory.Information;
 
-        public IComponent Create(LiveSplitState state)
-        {
-            return new CurrentComparison(state);
-        }
+        public IComponent Create(LiveSplitState state) => new CurrentComparison(state);
 
-        public string UpdateName
-        {
-            get { return ComponentName; }
-        }
+        public string UpdateName => ComponentName;
 
-        public string XMLURL
-        {
-#if RELEASE_CANDIDATE
-            get { return "http://livesplit.org/update_rc_sdhjdop/Components/update.LiveSplit.CurrentComparison.xml"; }
-#else
-            get { return "http://livesplit.org/update/Components/update.LiveSplit.CurrentComparison.xml"; }
-#endif
-        }
+        public string XMLURL => "http://livesplit.org/update/Components/update.LiveSplit.CurrentComparison.xml";
 
-        public string UpdateURL
-        {
-#if RELEASE_CANDIDATE
-            get { return "http://livesplit.org/update_rc_sdhjdop/"; }
-#else
-            get { return "http://livesplit.org/update/"; }
-#endif
-        }
+        public string UpdateURL => "http://livesplit.org/update/";
 
-        public Version Version
-        {
-            get { return Version.Parse("1.6"); }
-        }
+        public Version Version => Version.Parse("1.6");
     }
 }

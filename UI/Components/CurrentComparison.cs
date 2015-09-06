@@ -12,15 +12,12 @@ namespace LiveSplit.UI.Components
         protected InfoTextComponent InternalComponent { get; set; }
         public CurrentComparisonSettings Settings { get; set; }
 
-        public float PaddingTop { get { return InternalComponent.PaddingTop; } }
-        public float PaddingLeft { get { return InternalComponent.PaddingLeft; } }
-        public float PaddingBottom { get { return InternalComponent.PaddingBottom; } }
-        public float PaddingRight { get { return InternalComponent.PaddingRight; } }
+        public float PaddingTop => InternalComponent.PaddingTop;
+        public float PaddingLeft => InternalComponent.PaddingLeft;
+        public float PaddingBottom => InternalComponent.PaddingBottom;
+        public float PaddingRight => InternalComponent.PaddingRight;
 
-        public IDictionary<string, Action> ContextMenuControls
-        {
-            get { return null; }
-        }
+        public IDictionary<string, Action> ContextMenuControls => null;
 
         public CurrentComparison(LiveSplitState state)
         {
@@ -30,7 +27,7 @@ namespace LiveSplit.UI.Components
             };
             InternalComponent = new InfoTextComponent("Comparing Against", "")
             {
-                AlternateNameText = new String[]
+                AlternateNameText = new[]
                 {
                     "Comparison",
                     "Comp."
@@ -84,30 +81,15 @@ namespace LiveSplit.UI.Components
             InternalComponent.DrawHorizontal(g, state, height, clipRegion);
         }
 
-        public float VerticalHeight
-        {
-            get { return InternalComponent.VerticalHeight; }
-        }
+        public float VerticalHeight => InternalComponent.VerticalHeight;
 
-        public float MinimumWidth
-        {
-            get { return InternalComponent.MinimumWidth; }
-        }
+        public float MinimumWidth => InternalComponent.MinimumWidth;
 
-        public float HorizontalWidth
-        {
-            get { return InternalComponent.HorizontalWidth; }
-        }
+        public float HorizontalWidth => InternalComponent.HorizontalWidth;
 
-        public float MinimumHeight
-        {
-            get { return InternalComponent.MinimumHeight; }
-        }
+        public float MinimumHeight => InternalComponent.MinimumHeight;
 
-        public string ComponentName
-        {
-            get { return "Current Comparison"; }
-        }
+        public string ComponentName => "Current Comparison";
 
         public Control GetSettingsControl(LayoutMode mode)
         {
