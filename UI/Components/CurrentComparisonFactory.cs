@@ -1,5 +1,8 @@
 ﻿using LiveSplit.Model;
+using LiveSplit.UI.Components;
 using System;
+
+[assembly: ComponentFactory(typeof(CurrentComparisonFactory))]
 
 namespace LiveSplit.UI.Components
 {
