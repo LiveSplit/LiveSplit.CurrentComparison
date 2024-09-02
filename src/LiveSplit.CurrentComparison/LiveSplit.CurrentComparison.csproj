@@ -14,4 +14,8 @@
     <ProjectReference Include="$(LsLibPath)\CustomFontDialog\CustomFontDialog\CustomFontDialog.csproj" Private="false" ExcludeAssets="runtime" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="PolySharp" Version="1.14.1" PrivateAssets="all" />
+  </ItemGroup>
+
 </Project>
