@@ -56,17 +56,17 @@ public partial class CurrentComparisonSettings : UserControl
         chkOverrideTimeColor.CheckedChanged += chkOverrideTimeColor_CheckedChanged;
     }
 
-    void chkOverrideTimeColor_CheckedChanged(object sender, EventArgs e)
+    private void chkOverrideTimeColor_CheckedChanged(object sender, EventArgs e)
     {
         label2.Enabled = btnTimeColor.Enabled = chkOverrideTimeColor.Checked;
     }
 
-    void chkOverrideTextColor_CheckedChanged(object sender, EventArgs e)
+    private void chkOverrideTextColor_CheckedChanged(object sender, EventArgs e)
     {
         label1.Enabled = btnTextColor.Enabled = chkOverrideTextColor.Checked;
     }
 
-    void CurrentComponentSettings_Load(object sender, EventArgs e)
+    private void CurrentComponentSettings_Load(object sender, EventArgs e)
     {
         chkOverrideTextColor_CheckedChanged(null, null);
         chkOverrideTimeColor_CheckedChanged(null, null);
@@ -85,7 +85,7 @@ public partial class CurrentComparisonSettings : UserControl
         }
     }
 
-    void cmbGradientType_SelectedIndexChanged(object sender, EventArgs e)
+    private void cmbGradientType_SelectedIndexChanged(object sender, EventArgs e)
     {
         btnColor1.Visible = cmbGradientType.SelectedItem.ToString() != "Plain";
         btnColor2.DataBindings.Clear();
