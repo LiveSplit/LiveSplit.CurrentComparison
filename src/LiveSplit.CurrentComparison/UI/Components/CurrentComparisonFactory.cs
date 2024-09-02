@@ -15,7 +15,10 @@ public class CurrentComparisonFactory : IComponentFactory
 
     public ComponentCategory Category => ComponentCategory.Information;
 
-    public IComponent Create(LiveSplitState state) => new CurrentComparison(state);
+    public IComponent Create(LiveSplitState state)
+    {
+        return new CurrentComparison(state);
+    }
 
     public string UpdateName => ComponentName;
 

@@ -19,8 +19,8 @@ public partial class CurrentComparisonSettings : UserControl
     public GradientType BackgroundGradient { get; set; }
     public string GradientString
     {
-        get { return BackgroundGradient.ToString(); }
-        set { BackgroundGradient = (GradientType)Enum.Parse(typeof(GradientType), value); }
+        get => BackgroundGradient.ToString();
+        set => BackgroundGradient = (GradientType)Enum.Parse(typeof(GradientType), value);
     }
 
     public bool Display2Rows { get; set; }
@@ -113,7 +113,10 @@ public partial class CurrentComparisonSettings : UserControl
         return parent;
     }
 
-    public int GetSettingsHashCode() => CreateSettingsNode(null, null);
+    public int GetSettingsHashCode()
+    {
+        return CreateSettingsNode(null, null);
+    }
 
     private int CreateSettingsNode(XmlDocument document, XmlElement parent)
     {
