@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -9,6 +9,7 @@ using LiveSplit.Model;
 
 namespace LiveSplit.UI.Components;
 
+[GlobalFontConsumer(GlobalFont.TextFont)]
 public class CurrentComparison : IComponent
 {
     private static string T(string source) => UiLocalizer.Translate(source, LanguageResolver.ResolveCurrentCultureLanguage());
