@@ -4,12 +4,15 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
+using LiveSplit.Localization;
 using LiveSplit.Model;
 
 namespace LiveSplit.UI.Components;
 
 public class CurrentComparison : IComponent
 {
+    private static string T(string source) => UiLocalizer.Translate(source, LanguageResolver.ResolveCurrentCultureLanguage());
+
     protected InfoTextComponent InternalComponent { get; set; }
     public CurrentComparisonSettings Settings { get; set; }
 
@@ -26,12 +29,12 @@ public class CurrentComparison : IComponent
         {
             CurrentState = state
         };
-        InternalComponent = new InfoTextComponent("Comparing Against", "")
+        InternalComponent = new InfoTextComponent(T("Comparing Against"), "")
         {
             AlternateNameText = new[]
             {
-                "Comparison",
-                "Comp."
+                T("Comparison"),
+                T("Comp.")
             }
         };
     }
@@ -89,7 +92,7 @@ public class CurrentComparison : IComponent
 
     public float MinimumHeight => InternalComponent.MinimumHeight;
 
-    public string ComponentName => "Current Comparison";
+    public string ComponentName => T("Current Comparison");
 
     public Control GetSettingsControl(LayoutMode mode)
     {
